@@ -8,9 +8,9 @@ namespace OrderWebAPI.Controllers
         private readonly RestaurantDBEntities db = new RestaurantDBEntities();
 
         // GET: api/Customer
-        public IQueryable<Customer> GetCustomer()
+        public IQueryable<Customer> GetCustomers()
         {
-            return db.Customer;
+            return db.Customers;
         }
 
         protected override void Dispose(bool disposing)

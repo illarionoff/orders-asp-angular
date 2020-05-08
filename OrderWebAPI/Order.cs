@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace OrderWebAPI
 {
     using System;
@@ -25,8 +27,10 @@ namespace OrderWebAPI
         public Nullable<int> CustomerID { get; set; }
         public string PMMethod { get; set; }
         public Nullable<decimal> GTotal { get; set; }
-    
+        [NotMapped]
+        public string DeletedOrederItemIDs { get; set; }
         public virtual Customer Customer { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItems> OrderItems { get; set; }
     }

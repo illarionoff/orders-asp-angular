@@ -18,6 +18,7 @@ namespace OrderWebAPI
         public RestaurantDBEntities()
             : base("name=RestaurantDBEntities")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -25,9 +26,9 @@ namespace OrderWebAPI
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<Item> Item { get; set; }
-        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderItems> OrderItems { get; set; }
     }
 }
